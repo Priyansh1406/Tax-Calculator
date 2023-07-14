@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <style>
+    .calculator {
+      width: 600px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .field {
+      margin-bottom: 10px;
+    }
+
+    .field label {
+      display: inline-block;
+      width: 200px;
+    }
+
+    .btn {
+      width: 80px;
+      height: 30px;
+      margin: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <h2>Income</h2>
+    <div class="field">
+        <label for="grossIncome">Gross Annual Income:</label>
+        <input type="number" id="grossIncome">
+      </div>
+      <div class="field">
+        <label for="rentalIncome">Annual Rental Income:</label>
+        <input type="number" id="rentalIncome">
+      </div>
+
+    <h2>Expenses</h2>
+    <div class="field">
+      <label for="advertising">Advertising:</label>
+      <input type="number" id="advertising">
+    </div>
+    <div class="field">
+      <label for="councilRates">Council Rates:</label>
+      <input type="number" id="councilRates">
+    </div>
+    <div class="field">
+      <label for="waterRates">Water Rates:</label>
+      <input type="number" id="waterRates">
+    </div>
+    <div class="field">
+      <label for="landTax">Land Tax:</label>
+      <input type="number" id="landTax">
+    </div>
+    <div class="field">
+      <label for="strataFees">Strata Fees:</label>
+      <input type="number" id="strataFees">
+    </div>
+    <div class="field">
+      <label for="insurance">Insurance:</label>
+      <input type="number" id="insurance">
+    </div>
+    <div class="field">
+      <label for="interestLoan">Interest on Loan:</label>
+      <input type="number" id="interestLoan">
+    </div>
+    <div class="field">
+      <label for="propertyManagerFees">Property Manager Fees:</label>
+      <input type="number" id="propertyManagerFees">
+    </div>
+    <div class="field">
+      <label for="repairsMaintenance">Repairs and Maintenance:</label>
+      <input type="number" id="repairsMaintenance">
+    </div>
+    <div class="field">
+      <label for="propertyDepreciation">Property Depreciation:</label>
+      <input type="number" id="propertyDepreciation">
+    </div>
+    <div class="field">
+      <label for="cleaningPestControl">Cleaning and Pest Control:</label>
+      <input type="number" id="cleaningPestControl">
+    </div>
+
+    <button class="btn" onclick="calculate()">Calculate</button>
+
+    <div class="result">
+        <h2>Summary</h2>
+        <div id="rentalIncomeResult"></div>
+        <div id="totalExpensesResult"></div>
+        <div id="preTaxCashFlowResult"></div>
+        <div id="taxBenefitResult"></div>
+      </div>
+    </div>
+
+  <script src="calculator.js"></script>
+</body>
+</html>
