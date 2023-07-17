@@ -24,7 +24,7 @@ function calculate() {
   
     const totalExpenses = advertising + councilRates + waterRates + landTax + strataFees + insurance + interestLoan + propertyManagerFees + repairsMaintenance + propertyDepreciation + cleaningPestControl;
   
-    const preTaxCashFlow = totalExpenses - rentalIncome;
+    const preTaxCashFlow = rentalIncome - totalExpenses;
   
     const taxRate = calculateTaxRate(grossIncome);
     const taxBenefit = preTaxCashFlow * taxRate;
