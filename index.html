@@ -30,57 +30,57 @@
     <h2>Income</h2>
     <div class="field">
         <label for="grossIncome">Gross Annual Income:</label>
-        <input type="number" id="grossIncome">
+        <input type="text" id="grossIncome" oninput="formatNumberInput(this)" data-format="number">
       </div>
       <div class="field">
         <label for="rentalIncome">Annual Rental Income:</label>
-        <input type="number" id="rentalIncome">
+        <input type="text" id="rentalIncome" oninput="formatNumberInput(this)" data-format="number">
       </div>
 
     <h2>Expenses</h2>
     <div class="field">
       <label for="advertising">Advertising:</label>
-      <input type="number" id="advertising">
+      <input type="text" id="advertising" oninput="formatNumberInput(this)" data-format="number">
     </div>
     <div class="field">
       <label for="councilRates">Council Rates:</label>
-      <input type="number" id="councilRates">
+      <input type="text" id="councilRates" oninput="formatNumberInput(this)" data-format="number">
     </div>
     <div class="field">
       <label for="waterRates">Water Rates:</label>
-      <input type="number" id="waterRates">
+      <input type="text" id="waterRates" oninput="formatNumberInput(this)" data-format="number">
     </div>
     <div class="field">
       <label for="landTax">Land Tax:</label>
-      <input type="number" id="landTax">
+      <input type="text" id="landTax" oninput="formatNumberInput(this)" data-format="number">
     </div>
     <div class="field">
       <label for="strataFees">Strata Fees:</label>
-      <input type="number" id="strataFees">
+      <input type="text" id="strataFees" oninput="formatNumberInput(this)" data-format="number">
     </div>
     <div class="field">
       <label for="insurance">Insurance:</label>
-      <input type="number" id="insurance">
+      <input type="text" id="insurance" oninput="formatNumberInput(this)" data-format="number">
     </div>
     <div class="field">
       <label for="interestLoan">Interest on Loan:</label>
-      <input type="number" id="interestLoan">
+      <input type="text" id="interestLoan" oninput="formatNumberInput(this)" data-format="number">
     </div>
     <div class="field">
       <label for="propertyManagerFees">Property Manager Fees:</label>
-      <input type="number" id="propertyManagerFees">
+      <input type="text" id="propertyManagerFees" oninput="formatNumberInput(this)" data-format="number">
     </div>
     <div class="field">
       <label for="repairsMaintenance">Repairs and Maintenance:</label>
-      <input type="number" id="repairsMaintenance">
+      <input type="text" id="repairsMaintenance" oninput="formatNumberInput(this)" data-format="number">
     </div>
     <div class="field">
       <label for="propertyDepreciation">Property Depreciation:</label>
-      <input type="number" id="propertyDepreciation">
+      <input type="text" id="propertyDepreciation" oninput="formatNumberInput(this)" data-format="number">
     </div>
     <div class="field">
       <label for="cleaningPestControl">Cleaning and Pest Control:</label>
-      <input type="number" id="cleaningPestControl">
+      <input type="text" id="cleaningPestControl" oninput="formatNumberInput(this)" data-format="number">
     </div>
 
     <button class="btn" onclick="calculate()">Calculate</button>
