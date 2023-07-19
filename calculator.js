@@ -15,17 +15,13 @@ function formatNumberInput(input) {
   input.value = formattedValue;
 }
 
+// Function to calculate and display the results
 function calculate() {
   const grossIncomeInput = document.getElementById('grossIncome');
   const rentalIncomeInput = document.getElementById('rentalIncome');
 
-  const grossIncome = parseFloat(removeCommas(grossIncomeInput.value));
-  const rentalIncome = parseFloat(removeCommas(rentalIncomeInput.value));
-
-  if (isNaN(grossIncome) || isNaN(rentalIncome)) {
-    alert('Please enter values for both Gross Annual Income and Annual Rental Income');
-    return;
-  }
+  const grossIncome = parseFloat(removeCommas(grossIncomeInput.value)) || 0;
+  const rentalIncome = parseFloat(removeCommas(rentalIncomeInput.value)) || 0;
 
   const advertising = parseFloat(removeCommas(document.getElementById('advertising').value)) || 0;
   const councilRates = parseFloat(removeCommas(document.getElementById('councilRates').value)) || 0;
@@ -46,12 +42,13 @@ function calculate() {
   const taxRate = calculateTaxRate(grossIncome);
   const taxBenefit = (-preTaxCashFlow) * taxRate;
 
-  document.getElementById('rentalIncomeResult').innerHTML = `Rental Income: $${addCommas(rentalIncome.toFixed(2))}`;
-  document.getElementById('totalExpensesResult').innerHTML = `Total Expenses: $${addCommas(totalExpenses.toFixed(2))}`;
-  document.getElementById('preTaxCashFlowResult').innerHTML = `Pre-Tax Cash Flow: $${addCommas(preTaxCashFlow.toFixed(2))}`;
-  document.getElementById('taxBenefitResult').innerHTML = `Tax Benefit: $${addCommas(taxBenefit.toFixed(2))}`;
+  document.getElementById('rentalIncomeResult').textContent = `Rental Income: $${addCommas(rentalIncome.toFixed(2))}`;
+  document.getElementById('totalExpensesResult').textContent = `Total Expenses: $${addCommas(totalExpenses.toFixed(2))}`;
+  document.getElementById('preTaxCashFlowResult').textContent = `Pre-Tax Cash Flow: $${addCommas(preTaxCashFlow.toFixed(2))}`;
+  document.getElementById('taxBenefitResult').textContent = `Tax Benefit: $${addCommas(taxBenefit.toFixed(2))}`;
 }
 
+// Function to calculate the tax rate based on the gross income
 function calculateTaxRate(grossIncome) {
   if (grossIncome <= 18200) {
     return 0;
@@ -65,3 +62,15 @@ function calculateTaxRate(grossIncome) {
     return 0.45;
   }
 }
+
+// Add event listeners to input fields for dynamic result calculation
+const inputFields = document.querySelectorAll('input[data-format="number"]');
+inputFields.forEach((input) => {
+  input.addEventListener('input', () => {
+    formatNumberInput(input);
+    calculate();
+  });
+});
+
+// Initial calculation on page load
+calculate();
